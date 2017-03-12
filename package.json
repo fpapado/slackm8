@@ -1,8 +1,7 @@
 {
-  "name": "slackm8",
+  "name": "slackm8-fork",
   "version": "1.0.0",
   "description": "Randomly shuffle a team into groups & invite members to Slack channels",
-  "main": "index.js",
   "scripts": {
     "build": "webpack -p",
     "watch": "webpack --watch",
@@ -10,13 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chrisbuttery/slackm8.git"
+    "url": "https://github.com/fpapado/slackm8.git"
   },
-  "author": "Chris Buttery <info@chrisbuttery.com> (http://www.chrisbuttery.com)",
+  "author": "Fotis Papadogeorgopoulos <fgpapado@gmail.com> (https://fpapado.com)",
+  "contributors": [
+    "Chris Buttery <info@chrisbuttery.com> (http://www.chrisbuttery.com)"
+  ],
   "bugs": {
-    "url": "https://github.com/chrisbuttery/slackm8/issues"
+    "url": "https://github.com/fpapado/slackm8/issues"
   },
-  "homepage": "https://github.com/chrisbuttery/slackm8",
+  "homepage": "https://github.com/fpapado/slackm8",
   "license": "MIT",
   "devDependencies": {
     "elm": "^0.18.0"
