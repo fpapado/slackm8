@@ -1,5 +1,6 @@
-import Html.App as Html
+module Main exposing (..)
 
+import Html
 import Model exposing (model, Model)
 import View exposing (view)
 import Update exposing (update, Msg)
@@ -9,31 +10,34 @@ import Ports
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-  let
-    ( nextModel, nextCmd ) =
-      Update.update msg model
-  in
-    ( nextModel
-    , Cmd.batch
-        [ Ports.logExternal msg
-        , nextCmd
-        ]
-    )
+    let
+        ( nextModel, nextCmd ) =
+            Update.update msg model
+    in
+        ( nextModel
+        , Cmd.batch
+            [ Ports.logExternal msg
+            , nextCmd
+            ]
+        )
+
 
 
 -- init
 -- create a pair of model and Cmd Msg to expose to the app
 -- check for `savedModel` otherwise use `initialModel`
 
+
 init : Maybe Model -> ( Model, Cmd Msg )
 init savedModel =
-  ( Maybe.withDefault model savedModel, Cmd.none )
+    ( Maybe.withDefault model savedModel, Cmd.none )
 
 
+main : Program (Maybe Model) Model Msg
 main =
-  Html.programWithFlags
-    { init = init
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
-    }
+    Html.programWithFlags
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
