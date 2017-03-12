@@ -4,7 +4,9 @@
   "description": "Randomly shuffle a team into groups & invite members to Slack channels",
   "main": "index.js",
   "scripts": {
-    "build": "elm-make src/Main.elm --output dist/elm.js"
+    "build": "webpack -p",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --port 3000 --hot"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,15 @@
   "homepage": "https://github.com/chrisbuttery/slackm8",
   "license": "MIT",
   "devDependencies": {
-    "elm": "^0.17.0"
+    "elm": "^0.18.0"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "elm-hot-loader": "^0.5.4",
+    "elm-webpack-loader": "^4.2.0",
+    "file-loader": "^0.9.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "private": true
 }

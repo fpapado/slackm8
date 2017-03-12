@@ -1,3 +1,8 @@
+'use strict';
+
+require('./index.html');
+var Elm = require('./Main');
+
 var model = getModel()
 var app = Elm.Main.fullscreen(model);
 
